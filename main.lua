@@ -3,7 +3,8 @@ function love.load()
     player = {
         x = 100,
         y = 100,
-        size = 25
+        size = 25,
+        image = love.graphics.newImage("img/face.png")
     }
 end
 
@@ -26,4 +27,6 @@ end
 function love.draw()
     -- The players and coins are going to be circles
     love.graphics.circle("line", player.x, player.y, player.size)
+    love.graphics.draw(player.image, player.x, player.y,
+      0, 1, 1, player.image:getWidth()/2, player.image:getHeight()/2)
 end
